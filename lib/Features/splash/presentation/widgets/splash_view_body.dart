@@ -1,6 +1,10 @@
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+
+import '../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,7 +19,20 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late Animation<Offset> slidingAnimation;
   @override
   void initState() {
-    // TODO: implement initState
+    initSliding();
+    navigateToHome();
+
+    super.initState();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fadeIn, duration: kTrasitionDuration);
+    });
+  }
+
+  void initSliding() {
     animate = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
@@ -26,8 +43,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     ).animate(animate);
 
     animate.forward();
-
-    super.initState();
   }
 
   @override
@@ -36,6 +51,20 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.dispose();
     animate.dispose();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlidingImage(slidingAnimation: slidingAnimation);
+  }
+}
+
+class SlidingImage extends StatelessWidget {
+  const SlidingImage({
+    super.key,
+    required this.slidingAnimation,
+  });
+
+  final Animation<Offset> slidingAnimation;
 
   @override
   Widget build(BuildContext context) {
