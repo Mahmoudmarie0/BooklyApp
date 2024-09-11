@@ -4,7 +4,6 @@ import 'package:bookly/Features/home/presentation/views/widgets/featured_book_li
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
