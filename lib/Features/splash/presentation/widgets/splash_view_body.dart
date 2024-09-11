@@ -25,11 +25,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
   }
 
-  void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fadeIn, duration: kTrasitionDuration);
-    });
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animate.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlidingImage(slidingAnimation: slidingAnimation);
   }
 
   void initSliding() {
@@ -43,18 +48,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     ).animate(animate);
 
     animate.forward();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    animate.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SlidingImage(slidingAnimation: slidingAnimation);
   }
 }
 
@@ -86,4 +79,11 @@ class SlidingImage extends StatelessWidget {
       ),
     );
   }
+}
+
+void navigateToHome() {
+  Future.delayed(const Duration(seconds: 2), () {
+    Get.to(() => const HomeView(),
+        transition: Transition.fadeIn, duration: kTrasitionDuration);
+  });
 }
