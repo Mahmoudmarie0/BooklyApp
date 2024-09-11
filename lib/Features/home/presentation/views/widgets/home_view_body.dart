@@ -9,6 +9,7 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
+        ListViewItem(),
       ],
     );
   }
