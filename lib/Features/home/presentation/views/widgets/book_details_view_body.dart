@@ -1,5 +1,6 @@
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -14,9 +15,21 @@ class BookDetailsViewBody extends StatelessWidget {
         children: [
           const SafeArea(child: CustomBookDetailsAppBar()),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .17),
+            padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: const CustomBookImage(),
           ),
+          const SizedBox(height: 43),
+          const Text(
+            "The Jungle Book",
+            style: Styles.textStyle10,
+          ),
+          const SizedBox(height: 4),
+          const Opacity(
+              opacity: 0.6,
+              child: Text(
+                "Rudyard Kipling",
+                style: TextStyle(fontSize: 7),
+              )),
         ],
       ),
     );
