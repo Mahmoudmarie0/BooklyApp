@@ -40,8 +40,12 @@ dependencies:
   font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
+  test: any
   flutter_test:
-    sdk: flutter
+   sdk: flutter
+  flutter_driver:
+   sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
