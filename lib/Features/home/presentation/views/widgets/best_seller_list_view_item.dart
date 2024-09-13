@@ -40,14 +40,14 @@ class BookListViewItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                         style: TextStyle(
-                          fontSize: 6,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ))),
                 const SizedBox(height: 3),
                 const Text(
                   "J.K. Rowling",
                   style: TextStyle(
-                    fontSize: 6,
+                    fontSize: 13,
                   ),
                 ),
                 const Row(
@@ -55,7 +55,7 @@ class BookListViewItem extends StatelessWidget {
                     Text(
                       "19.99 €",
                       style: TextStyle(
-                        fontSize: 9,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

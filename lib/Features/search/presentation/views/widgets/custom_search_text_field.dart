@@ -8,6 +8,10 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 16.0,
+        ),
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
@@ -19,7 +23,7 @@ class CustomSearchTextField extends StatelessWidget {
           ),
         ),
         hintStyle: const TextStyle(
-          fontSize: 6,
+          fontSize: 15,
         ),
       ),
     );

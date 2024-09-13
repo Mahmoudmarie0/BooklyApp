@@ -12,7 +12,7 @@ class SimilarBooksSection extends StatelessWidget {
       children: [
         Text(
           "You can also like",
-          style: TextStyle(fontSize: 6, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 16),
         SimilarBookListView(),

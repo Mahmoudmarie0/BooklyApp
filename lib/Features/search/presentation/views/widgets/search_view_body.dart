@@ -1,7 +1,6 @@
 import 'package:bookly/Features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../home/presentation/views/widgets/best_seller_list_view_item.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -19,7 +18,7 @@ class SearchViewBody extends StatelessWidget {
           Text(
             "Search Result",
             style: TextStyle(
-              fontSize: 6,
+              fontSize: 15,
             ),
           ),
           SizedBox(height: 16),
