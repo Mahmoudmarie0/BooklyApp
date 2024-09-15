@@ -37,7 +37,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
         endPoints:
             'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
     List<BookEntity> books = getBookList(data);
-
+    saveBooksData(books, kNewestBox);
     return books;
   }
 }
