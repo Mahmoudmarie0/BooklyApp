@@ -8,7 +8,7 @@ abstract class HomeRemoteDataSource {
   List<BookEntity> fetchNewestBooks();
 }
 
-class HomeLocalDataSourceImpl extends HomeRemoteDataSource {
+class HomeLocalDataSource extends HomeRemoteDataSource {
   @override
   List<BookEntity> fetchFeaturedBooks() {
     // TODO: implement fetchFeaturedBooks
