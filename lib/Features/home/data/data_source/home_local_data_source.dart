@@ -3,12 +3,12 @@ import 'package:hive/hive.dart';
 import '../../../../core/utils/constants.dart';
 import '../../domain/entities/book_entity.dart';
 
-abstract class HomeRemoteDataSource {
+abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks();
   List<BookEntity> fetchNewestBooks();
 }
 
-class HomeLocalDataSource extends HomeRemoteDataSource {
+class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   @override
   List<BookEntity> fetchFeaturedBooks() {
     // TODO: implement fetchFeaturedBooks
