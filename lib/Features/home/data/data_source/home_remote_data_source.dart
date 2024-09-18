@@ -17,7 +17,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data = await apiServices.get(
-        endPoints: 'volumes?Filtering=free-ebooks&q=programming');
+        endPoints: 'https://www.googleapis.com/books/v1/volumes?q=programming');
     List<BookEntity> books = getBookList(data);
     saveBooksData(books, kFeaturedBox);
     return books;

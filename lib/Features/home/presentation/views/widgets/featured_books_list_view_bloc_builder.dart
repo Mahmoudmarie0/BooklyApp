@@ -15,7 +15,9 @@ class FeaturedBookListViewBlocBuilder extends StatelessWidget {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
         builder: (context, state) {
       if (state is FeaturedBooksSucces) {
-        return const FeaturedBookListView();
+        return FeaturedBookListView(
+          books: state.book,
+        );
       } else if (state is FeaturedBooksFailure) {
         return Text(state.message);
       } else {

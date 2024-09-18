@@ -17,18 +17,31 @@ class BookEntityAdapter extends TypeAdapter<BookEntity> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return BookEntity(
-      image: fields[1] as String?,
-      title: fields[2] as String,
-      authorName: fields[3] as String?,
-      price: fields[4] as num?,
-      rating: fields[5] as num?,
-      bookId: fields[0] as String,
+      image: fields[1] as String?, // Keep this nullable
+      title: fields[2] as String? ?? '', // Provide a default value if null
+      authorName: fields[3] as String?, // Keep this nullable
+      price: fields[4] as num?, // Nullable
+      rating: fields[5] as num?, // Nullable
+      bookId: fields[0] as String? ?? '', // Provide a default value if null
     );
   }
 
   @override
   void write(BinaryWriter writer, BookEntity obj) {
-    writer.writeByte(0);
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.bookId)
+      ..writeByte(1)
+      ..write(obj.image)
+      ..writeByte(2)
+      ..write(obj.title)
+      ..writeByte(3)
+      ..write(obj.authorName)
+      ..writeByte(4)
+      ..write(obj.price)
+      ..writeByte(5)
+      ..write(obj.rating);
   }
 
   @override
