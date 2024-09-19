@@ -26,9 +26,15 @@ class _FeaturedBookListViewBlocBuilderState
       if (state is FeaturedBooksSucces) {
         books.addAll(state.book);
       }
+      if (state is FeaturedBooksPaginationFailure) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(state.errormessage),
+        ));
+      }
     }, builder: (context, state) {
       if (state is FeaturedBooksSucces ||
-          state is FeaturedBooksPaginationLoading) {
+          state is FeaturedBooksPaginationLoading ||
+          state is FeaturedBooksPaginationFailure) {
         return FeaturedBooksListView(
           books: books,
         );

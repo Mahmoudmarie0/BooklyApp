@@ -16,7 +16,11 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
     emit(FeaturedBooksLoading());
     var result = await fetchFeaturedBooksUseCase.call(pageNumber);
     result.fold((failure) {
-      emit(FeaturedBooksFailure(failure.message));
+      if (pageNumber == 0) {
+        emit(FeaturedBooksFailure(failure.message));
+      } else {
+        emit(FeaturedBooksPaginationFailure(failure.message));
+      }
     }, (books) {
       emit(FeaturedBooksSucces(books));
     });
